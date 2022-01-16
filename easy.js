@@ -35,11 +35,10 @@ const altNumbers = (numArray) => {
         return 'Empty array...';
     }
 
-    const length = numArray.length;
     const pos = [];
     const neg = [];
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < numArray.length; i++) {
         if (numArray[i] < 0) {
             neg.push(numArray[i]);
         } else {
@@ -47,22 +46,20 @@ const altNumbers = (numArray) => {
         }
     }
 
-    const posL = pos.length;
-    const negL = neg.length;
     const alt = [];
 
-    if (posL >= negL) {
-        for (let i = 0; i < posL; i++) {
-            if (i == posL - 1) {
+    if (pos.length >= neg.length) {
+        for (let i = 0; i < pos.length; i++) {
+            if (i == pos.length - 1) {
                 alt.push(pos[i]);
             } else {
                 alt.push(pos[i]);
                 alt.push(neg[i]);
             }
         }
-    } else if (negL > posL) {
-        for (let i = 0; i < negL; i++) {
-            if (i == negL - 1) {
+    } else if (neg.length > pos.length) {
+        for (let i = 0; i < neg.length; i++) {
+            if (i == neg.length - 1) {
                 alt.push(neg[i]);
             } else {
                 alt.push(neg[i]);
